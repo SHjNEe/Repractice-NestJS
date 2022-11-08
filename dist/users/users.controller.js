@@ -55,7 +55,6 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], UsersController.prototype, "createUser", null);
 __decorate([
-    (0, common_1.UseInterceptors)(new serialize_interceptor_1.SerializeInterceptor(user_dto_1.UserDto)),
     (0, common_1.Get)('/:id'),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
@@ -86,6 +85,7 @@ __decorate([
 ], UsersController.prototype, "updateUser", null);
 UsersController = __decorate([
     (0, common_1.Controller)('auth'),
+    (0, serialize_interceptor_1.Serialize)(user_dto_1.UserDto),
     __metadata("design:paramtypes", [users_service_1.UsersService])
 ], UsersController);
 exports.UsersController = UsersController;
