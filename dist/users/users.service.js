@@ -26,6 +26,9 @@ let UsersService = class UsersService {
         return await this.userRepository.save(user);
     }
     findOne(id) {
+        if (!id) {
+            return null;
+        }
         const user = this.userRepository.find({ where: { id } });
         return user;
     }
